@@ -1,0 +1,107 @@
+@use "../../styles/mixins";
+@use "../../styles/variables";
+
+.card {
+  z-index: 100;
+  overflow: hidden;
+
+  h2, h3, h4, p {
+    margin: 0;
+  }
+
+  .contentContainer {
+    padding-top: 10px;
+    .box {
+      background-color: white;
+      height: 450px;
+      width: 300px;
+      padding: 15px;
+      border: 2px solid variables.$background-color-primary;
+      border-radius: 20px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+      @include mixins.item-center;
+      justify-content: flex-start;
+      flex-direction: column;
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+
+      &:hover {
+        box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+        transform: translateY(-5px);
+      }
+
+      > :last-child {
+        margin-right: auto;
+        align-self: flex-start;
+      }
+
+      .header {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+
+      .price {
+        width: 100%;
+        height: 120px;
+        @include mixins.item-center;
+        flex-direction: column;
+
+        .discount {
+          display: flex;
+          flex-direction: column;
+          gap: 5px;
+
+          .discountContent {
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+            text-align: center;
+            align-items: center;
+
+            .priceBefore {
+              text-decoration: line-through;
+            }
+
+            .tagDiscount {
+              padding: 4px;
+              border-radius: 20px;
+              background-color: rgba(variables.$background-color-secondary, 0.8);
+            }
+          }
+        }
+      }
+
+      .separator {
+        display: block;
+        border-bottom: 2px solid variables.$background-color-primary;
+        width: 100%;
+        padding: 10px 0;
+        margin-bottom: 10px;
+      }
+
+      .feature {
+        text-align: left;
+
+        .list {
+          display: flex;
+          flex-direction: row;
+          align-items: flex-start;
+          gap: 10px;
+          padding-top: 5px;
+
+          p {
+            margin-top: -4px;
+          }
+
+          .dot {
+            width: 10px;
+            height: 10px;
+            background-color: variables.$background-color-darker;
+            border-radius: 50%;
+          }
+        }
+      }
+    }
+  }
+}

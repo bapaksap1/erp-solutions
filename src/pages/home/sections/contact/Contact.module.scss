@@ -1,0 +1,48 @@
+@use "../../../../styles/variables";
+@use "../../../../styles/mixins";
+
+.contact {
+  background-color: variables.$background-color-darker;
+  overflow: hidden;
+  padding: 40px 20px;
+  .content {
+    @include mixins.container;
+    .topContent {
+    }
+    .separator {
+      display: block;
+      border-bottom: 2px solid variables.$background-color-secondary;
+      width: 100%;
+      padding: 10px 0;
+      margin-bottom: 10px;
+    }
+    .contactContent {
+      padding-top: 20px;
+      .contactList {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        .contactLogo {
+          img {
+            width: 20px;
+          }
+        }
+      }
+    }
+    .footerContent {
+      .footer {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        @media (min-width: variables.$breakpoint-lg) {
+          flex-direction: row;
+        }
+        .tnc {
+          display: flex;
+          flex-direction: row;
+          gap: 20px;
+        }
+      }
+    }
+  }
+}

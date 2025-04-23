@@ -1,0 +1,48 @@
+@use "../../styles/mixins";
+@use "../../styles/variables";
+
+
+.container {
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+  width: 100%;
+  max-width: 600px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  .input {
+    flex: 1;
+    border: none;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    color: #555;
+    outline: none;
+
+    &::placeholder {
+      color: #aaa;
+    }
+  }
+
+  .button {
+    background-color: variables.$background-color-darker;
+    color: #ffffff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: variables.$background-color-primary;
+    }
+
+    &:disabled {
+      background-color: #ffc4c4;
+      cursor: not-allowed;
+    }
+  }
+
+}
+
