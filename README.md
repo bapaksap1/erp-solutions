@@ -1,4 +1,4 @@
-# React Project
+# ERP Web Solutions
 
 Proyek ini menggunakan React sebagai kerangka kerja utama, dengan beberapa teknologi pendukung untuk mempermudah pengembangan dan meningkatkan performa. Pastikan Anda telah menginstal **Node.js versi 22.14.0** atau yang lebih baru sebelum memulai.
 
